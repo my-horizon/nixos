@@ -70,6 +70,7 @@
     firefox
     evince
     libreoffice-still
+    hyphenDicts.de_DE
     nerd-fonts.jetbrains-mono
     xwayland
     # For Projects
