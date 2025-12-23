@@ -86,6 +86,8 @@
     openjdk25
   ];
 
+  # List services that you want to enable:
+
   # Ly
   services.displayManager.ly = {
     enable = true;
@@ -114,8 +116,6 @@
       nerd-fonts.jetbrains-mono
     ];
   };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
