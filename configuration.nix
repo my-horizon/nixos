@@ -63,12 +63,14 @@
     neovim
     git
     unzip
+    zip
     yazi
     nfs-utils
     wofi
     thunderbird
     firefox
     evince
+    kdePackages.okular
     libreoffice-still
     hyphenDicts.de_DE
     nerd-fonts.jetbrains-mono
@@ -81,9 +83,6 @@
     stylua
     nil
     alejandra
-    # For studying
-    logisim-evolution
-    openjdk25
   ];
 
   # List services that you want to enable:
