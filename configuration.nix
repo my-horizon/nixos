@@ -57,7 +57,6 @@
     swayfx
     swaybg
     swaylock
-    swayidle
     waybar
     ghostty
     neovim
