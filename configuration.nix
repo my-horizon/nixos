@@ -64,7 +64,7 @@
     unzip
     zip
     yazi
-    nfs-utils
+    cifs-utils
     wofi
     thunderbird
     firefox
