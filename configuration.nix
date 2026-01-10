@@ -60,10 +60,10 @@
     waybar
     ghostty
     neovim
+    yazi
     git
     unzip
     zip
-    yazi
     cifs-utils
     wofi
     thunderbird
