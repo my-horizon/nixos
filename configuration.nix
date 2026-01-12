@@ -58,6 +58,7 @@
     swaybg
     swaylock
     waybar
+    pwvucontrol
     ghostty
     neovim
     yazi
