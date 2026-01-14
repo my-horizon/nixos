@@ -79,6 +79,10 @@
     clang
     # For Neovim
     clang-tools
+    vscode-json-languageserver
+    prettier
+    yaml-language-server
+    yamlfmt
     luajitPackages.lua-lsp
     stylua
     nil
