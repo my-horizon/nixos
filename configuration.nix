@@ -58,6 +58,7 @@
     swaybg
     swaylock
     waybar
+    networkmanagerapplet
     pwvucontrol
     ghostty
     neovim
