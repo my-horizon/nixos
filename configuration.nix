@@ -113,6 +113,24 @@
     games.enable = false;
   };
 
+  # OpenSSH daemon
+  services.openssh = {
+    enable = true;
+  };
+
+  # Filesystem setup
+  fileSystems."/mnt" = {
+    device = "//192.168.10.150/data";
+    fsType = "cifs";
+    options = [
+      "credentials=/home/unknown/.cifs-credentials"
+      "uid=1000"
+      "gid=100"
+      "vers=3.0"
+    ];
+    neededForBoot = false;
+  };
+
   # Font
   fonts = {
     fontconfig.enable = true;
@@ -121,16 +139,5 @@
     ];
   };
 
-  # OpenSSH daemon
-  services.openssh = {
-    enable = true;
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }
