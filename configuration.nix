@@ -119,7 +119,7 @@
   };
 
   # Filesystem setup
-  fileSystems."/mnt" = {
+  fileSystems."/mnt/data" = {
     device = "//192.168.10.150/data";
     fsType = "cifs";
     options = [
