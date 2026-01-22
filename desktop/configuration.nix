@@ -1,21 +1,18 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
+    # Include the results of the hardware scan
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
+  # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Define hostname
@@ -24,10 +21,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Set your time zone
   time.timeZone = "Europe/Berlin";
 
-  # Select internationalisation properties.
+  # Select internationalisation properties
   i18n.defaultLocale = "de_DE.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -42,7 +39,7 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.unknown = {
     isNormalUser = true;
     description = "unknown";
@@ -50,8 +47,7 @@
     packages = with pkgs; [];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     # NixOS Basis
     swayfx
