@@ -75,6 +75,7 @@
     # For Projects
     clang
     # For Neovim
+    ripgrep
     clang-tools
     vscode-json-languageserver
     prettier
