@@ -4,8 +4,9 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan
     ./hardware-configuration.nix
+    ./programs.nix
+    ./services.nix
   ];
 
   # Bootloader
@@ -45,95 +46,6 @@
     description = "unknown";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
-  };
-
-  # List packages installed in system profile
-  environment.systemPackages = with pkgs; [
-    # NixOS Basis
-    swayfx
-    swaybg
-    swaylock
-    waybar
-    networkmanagerapplet
-    pwvucontrol
-    ghostty
-    neovim
-    yazi
-    git
-    unzip
-    zip
-    cifs-utils
-    wofi
-    thunderbird
-    firefox
-    evince
-    kdePackages.okular
-    libreoffice-still
-    hyphenDicts.de_DE
-    nerd-fonts.jetbrains-mono
-    xwayland
-    # For Projects
-    clang
-    # For Neovim
-    ripgrep
-    clang-tools
-    vscode-json-languageserver
-    prettier
-    yaml-language-server
-    yamlfmt
-    luajitPackages.lua-lsp
-    stylua
-    nil
-    alejandra
-  ];
-
-  # List services that you want to enable:
-
-  # Ly
-  services.displayManager.ly = {
-    enable = true;
-  };
-
-  # Sway
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
-  # Gnome
-  services.desktopManager.gnome = {
-    enable = true;
-  };
-  services.gnome = {
-    core-apps.enable = false;
-    core-developer-tools.enable = false;
-    games.enable = false;
-  };
-
-  # OpenSSH daemon
-  services.openssh = {
-    enable = true;
-  };
-
-  # Filesystem setup
-  fileSystems."/mnt/data" = {
-    device = "//192.168.10.150/data";
-    fsType = "cifs";
-    options = [
-      "credentials=/home/unknown/.cifs-credentials"
-      "uid=1000"
-      "gid=100"
-      "vers=3.0"
-    ];
-    neededForBoot = false;
-  };
-
-  # Font
-  fonts = {
-    fontconfig.enable = true;
-    packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
-    ];
   };
 
   system.stateVersion = "25.11";
