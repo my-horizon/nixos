@@ -1,8 +1,9 @@
 {
-  config,
+  # config, (not sure if needed)
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
     ./programs.nix
@@ -44,8 +45,11 @@
   users.users.unknown = {
     isNormalUser = true;
     description = "unknown";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   system.stateVersion = "25.11";
